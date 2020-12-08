@@ -2,6 +2,7 @@ package eu.fade.mswarehousemanagement.domain;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -122,5 +123,20 @@ public class Employee {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", employeeNumber='" + employeeNumber + '\'' +
+                ", dateInService=" + dateInService +
+                ", active=" + active +
+                ", function=" + function +
+                ", wage=" + wage +
+                ", address=" + address +
+                '}';
     }
 }

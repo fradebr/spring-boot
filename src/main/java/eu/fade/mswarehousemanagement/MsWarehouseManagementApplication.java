@@ -1,5 +1,8 @@
 package eu.fade.mswarehousemanagement;
 
+import java.util.List;
+
+import eu.fade.mswarehousemanagement.domain.Employee;
 import eu.fade.mswarehousemanagement.domain.EmployeeService;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -17,6 +20,19 @@ public class MsWarehouseManagementApplication {
     public ApplicationRunner runner(EmployeeService employeeService) {
         return args -> {
             employeeService.printServiceName();
+            Employee employee1 = employeeService.findById(1052);
+            System.out.println(employee1);
+
+            List<Employee> employees = employeeService.findByName("ew");
+            employees.forEach(System.out::println);
+
+            Employee employeeToUpdate = employeeService.findById(1052);
+            System.out.println(employeeToUpdate);
+            employeeToUpdate.setWage(999999.00);
+            employeeService.update(employeeToUpdate);
+
+            Employee employeeUpdated = employeeService.findById(1052);
+            System.out.println(employeeUpdated);
         };
     }
 }
