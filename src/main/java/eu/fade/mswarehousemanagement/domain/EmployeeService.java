@@ -2,15 +2,15 @@ package eu.fade.mswarehousemanagement.domain;
 
 import java.util.List;
 
-import eu.fade.mswarehousemanagement.infrastructure.EmployeeEmfRepository;
+import eu.fade.mswarehousemanagement.infrastructure.EmployeeEmRepository;
 import org.springframework.stereotype.Service;
 
 @Service
 public class EmployeeService {
 
-    private EmployeeEmfRepository repository;
+    private EmployeeEmRepository repository;
 
-    public EmployeeService(EmployeeEmfRepository repository) {
+    public EmployeeService(EmployeeEmRepository repository) {
         this.repository = repository;
     }
 
